@@ -28,18 +28,15 @@ function App() {
 
   const toggleIsTimeRunning = () => {
     setIsTimeRunning(!isTimeRunning)
-    if (!isTimeRunning) {
-      setStartButtonText('Pausar')
-    } else {
-      setStartButtonText('Iniciar')
-    }
   }
 
   const increaseNumberOfLaps = () => {
     setNumberOfLaps(numberOfLaps + 1)
   }
   const decreaseNumberOfLaps = () => {
-    setNumberOfLaps(numberOfLaps - 1)
+    if (numberOfLaps > 0) {
+      setNumberOfLaps(numberOfLaps - 1)
+    }
   }
 
   const reset = () => {
@@ -57,7 +54,7 @@ function App() {
         numberOfLaps > 0 &&
         <ShowTime time={Math.round(time / numberOfLaps)} />
       }
-      <Button text={startButtonText} onClick={toggleIsTimeRunning} />
+      <Button text={isTimeRunning ? 'Pausar' : 'Iniciar'} onClick={toggleIsTimeRunning} />
       <Button text='Reiniciar' onClick={reset} />
     </div>
   )
