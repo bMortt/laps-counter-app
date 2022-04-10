@@ -7,6 +7,14 @@
     text-align: center;
 }
 
+#root {
+    border: 1px solid #f9f9f9;
+    /* border-radius: 15px; */
+    width: 30%; height: 50%;
+    position: relative;
+    left: 35%;
+}
+
 #laps {
     font-size: 288px;
     font-weight: bold;
